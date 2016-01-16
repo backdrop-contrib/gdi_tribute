@@ -1,5 +1,5 @@
-name = News Arrow
-description = A mobile theme for Backdrop CMS based on Yahoo PureCSS
+name = GDI_Tribute
+description = A theme for your small but growing organization that's tribute to Girl Develop It
 backdrop = 1.x
 type = theme
 version = 1.x-1.1

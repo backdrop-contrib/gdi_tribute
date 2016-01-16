@@ -16,6 +16,9 @@
 // @import 'base/normalize';
 @import 'base/typography';
 
+/* ---------- Import GDI Git styles directly ---------- */
+// @import 'source-git/application';
+
 /* ---------- Import custom styles ---------- */
 @import 'design/layout';
 @import 'design/components';
