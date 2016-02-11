@@ -1,9 +1,9 @@
 <?php
 /**
  * @file
- * Theme settings file for Pure CSS.
+ * Theme settings for GDI Tribute parent theme
  *
- */
+*/
 
 function gdi_tribute_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NULL) {
 
@@ -11,11 +11,9 @@ if (isset($form_id)) {
    return;
   }
 
-$form['gdi_tribute_cdn'] = array(
-    '#type'          => 'checkbox',
-    '#title'         => t('<b>Use Cloudflare CDN</b> instead of this website to serve the base CSS and Javascript files.  If you are using SASS, you will have to manually adjust your imports to avoid loading the same styles twice.'),
-    '#default_value' => theme_get_setting('gdi_tribute_cdn', 'gdi_tribute'),
-  );
+$form['disclaimer00'] = array(
+  '#markup' => '<p><strong>' . t('These settings for the parent theme do NOT extend into the subtheme.') . '</strong></p>',
+);
 
 $form['disclaimer'] = array(
   '#markup' => '<p>' . t('You may choose to include these Javascript files into your page to help enable these certain components.  WARNING: some of the components may rely on multiple scripts, and you are responsible for adding the theme template functions to utilize these functionalities.  If you do not need these functionalities for this website, you may leave each unchecked.') . '</p>',
@@ -92,4 +90,9 @@ $form['gdi_tribute_footer_main_background_blurred'] = array(
       '#title' => t('Blur this background'),
       '#default_value' => theme_get_setting('gdi_tribute_footer_main_background_blurred', 'gdi_tribute'),
     );
+
+$form['recommended'] = array(
+  '#markup' => '<p>' . t('Looking for additional theme features?  You might find what you are looking in layouts or modules.  Some common items to add to your site might be:<br><a href="https://backdropcms.org/modules">Modules</a><br><a href="https://backdropcms.org/layouts">Layouts</a><br>Menus<br><a href="https://backdropcms.org/project/mobile_navigation">Mobile Navigation</a><br><a href="https://backdropcms.org/project/responsive_menus">Responsive Menus</a><br><a href="https://backdropcms.org/project/wpmenu">WPMenu</a><br>Widgets<br><a href="https://backdropcms.org/project/google_fonts">Google Fonts</a><br><a href="https://backdropcms.org/project/back_to_top">Back To Top</a><br><a href="https://backdropcms.org/project/fanciblock">FanciBlock</a><br><a href="https://backdropcms.org/project/flexslider">FlexSlider</a><br>Parallax<br><a href="https://backdropcms.org/project/parallax_bg">Parallax_BG</a><br><a href="https://backdropcms.org/project/scrollreveal">Scroll Reveal</a><br><a href="https://backdropcms.org/project/void_menu">Void Menu</a> ') . '</p>',
+);
+
 }

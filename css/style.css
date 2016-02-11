@@ -2,14 +2,28 @@
 /**
  * Style file
  *
- * This file is compiled into style.css
-
-@import "bourbon";
-@import "neat";
+ * This file is compiled into css/your-custom.css
+ * Uncomment the lines of the features you would like to use.
+ * Comment the lines of the features you don't need on this website
  */
-/* ---------- Import base ---------- */
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/* ---------- Import parent theme base ---------- */
 /* Colors */
 /* Font stuff */
+/**
+ * Variables
+ *
+ * Keep your site variables here
+ */
+/**
+ * Functions
+ *
+ */
 /**
  * Functions
  *
@@ -20,6 +34,11 @@
  * Snippets of reusable CSS to develop faster and keep code readable
  */
 /* Overwrite the default media mixin for ie9 fallback */
+/**
+ * Mixins
+ *
+ * Snippets of reusable CSS to develop faster and keep code readable
+ */
 /**
  * Extendables
  *
@@ -32,6 +51,11 @@
     display: table;
     clear: both; }
 
+/**
+ * Extendables
+ *
+ * Collect all of your extendable classes, ids and silent extendables.
+ */
 /*
  * Typography
  *
@@ -212,8 +236,11 @@ a.feed-icon {
   display: inline-block;
   padding: 15px 0 0 0; }
 
-/* ---------- Import GDI Git styles directly ---------- */
-/* ---------- Import custom styles ---------- */
+/*
+ * Typography
+ *
+ * Text styles, fonts, not colours go in this file
+ */
 /**
  * Layout
  *
@@ -812,6 +839,12 @@ div.admin-panel .description {
   .layout--two-column .l-content, .layout--two-column .l-sidebar {
     padding: 0 5px; } }
 
+/**
+ * Layout
+ *
+ * Layout theming should go in this file
+ * blocks, sidebars, nodes, regions and non-forms/buttons/footer/header
+ */
 /*
  * Components
  *
@@ -1194,6 +1227,12 @@ a.danger, #edit-cancel {
     font-size: 2rem;
     margin-bottom: .5rem; } }
 
+/*
+ * Components
+ *
+ * Include your design elements in this file
+ * forms/buttons and specific page elements
+ */
 /**
  * Navigation
  *
@@ -1627,6 +1666,11 @@ footer.l-footer {
   #mobile-menu-inner.accordion {
     width: 100% !important; } }
 
+/**
+ * Navigation
+ *
+ * footer/header/main menu/navigation go in this file
+ */
 /*
  * Colours
  *
@@ -1927,3 +1971,9 @@ input.form-search {
 @media only screen and (max-width: 768px) {
   .block-system-main-menu .mobile-menu-accordion li.expanded li, .block-system-main-menu .mobile-menu-basic li.expanded li {
     background: #e4e9e5 !important; } }
+
+/*
+ * Colours
+ *
+ * Colours go in this file
+ */

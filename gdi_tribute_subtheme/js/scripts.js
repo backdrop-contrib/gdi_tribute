@@ -1,6 +1,6 @@
 /**
  * @file
- * JS for GDI Tribute.
+ * JS for GDI Tribute subtheme.
  */
 (function($, Backdrop, window, document, undefined) {
 
