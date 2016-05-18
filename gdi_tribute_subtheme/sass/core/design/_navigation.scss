@@ -1,9 +1,5 @@
 /**
- * Navigation
- *
  * footer/header/main menu/navigation go in this file
- * these defaults come from the Bartik theme and are being transitioned from CSS into SASS variables
- * Big thanks to Jen Simmons for these defaults https://www.drupal.org/u/jensimmons
  */
 @charset "UTF-8" ;
 
@@ -35,12 +31,11 @@
   outline: 0;
 }
 
-header.l-header {
+.l-header {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-  width: 100%;
   z-index: 998;
   top: 0;
-  min-height: 50px;
+  min-height: 100px;
 }
 
 html.admin-bar header.l-header {
@@ -51,28 +46,6 @@ html.admin-bar header.l-header {
   letter-spacing: 1px;
   font-weight: 600;
   padding: 5px 15px;
-}
-
-.block-system-header {
-  float: left;
-  width: auto;
-}
-
-[dir="rtl"] .block-system-header .logo {
-  float: right;
-  padding: 15px 10px 0px 15px;
-}
-
-.block-system-header .name-and-slogan {
-  float: left;
-
-  /* LTR */
-  padding-top: 34px;
-  margin: 0 0 30px;
-}
-
-[dir="rtl"] .block-system-header .name-and-slogan {
-  float: right;
 }
 
 /* Region header blocks. */
@@ -110,24 +83,6 @@ html.admin-bar header.l-header {
 [dir="rtl"] .l-header .form-text {
   margin-left: 2px;
   margin-right: 0;
-}
-
-/* Region header block menus. */
-.l-header .header-menu {
-  padding: 0;
-  margin: 10px 10px 0;
-  display: inline;
-}
-
-.l-header .header-menu li {
-  display: inline;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.l-header .header-menu li.last a {
-  border-bottom: 0;
 }
 
 /* User Login block in the header region */
@@ -240,25 +195,7 @@ html.admin-bar header.l-header {
   padding: 0 0.5em;
 }
 
-/* --------------- Header Menu ------------ */
-.header-menu {
-  float: right;
-
-  /* LTR */
-  font-size: 0.929em;
-  margin: 10px 10px 0;
-}
-
-[dir="rtl"] .header-menu {
-  float: left;
-}
-
 /* --------------- Main Menu ------------ */
-body .l-header ul.menu li a.active,
-.l-header ul.menu li.active-trail a {
-  background-color: transparent;
-}
-
 .l-header ul.menu li {
   float: left;
 
@@ -284,6 +221,25 @@ body .l-header ul.menu li a.active,
 
 [dir="rtl"] .l-header ul.menu a {
   float: right;
+}
+
+.block-system-main-menu ul.menu li ul {
+  border: 0px solid !important;
+}
+
+body:not(.front) .block-system-main-menu {
+  top: 0px !important;
+}
+
+.l-header-inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 965px;
+  margin: auto;
+}
+
+.l-header nav li {
+    display: inline-block;
 }
 
 /* ------------------ Footer ------------------ */
@@ -402,122 +358,34 @@ body .l-header ul.menu li a.active,
   border-left: none;
 }
 
-.block-system-main-menu ul.menu li ul {
-  border: 0px solid !important;
-}
-
-body:not(.front) .block-system-main-menu {
-  top: 0px !important;
-}
-
-header.l-header,
-.l-header ul.menu li a.active,
-.l-header ul.menu li.active-trail a,
-.header-menu a {
-  letter-spacing: 1px;
-  font-weight: 300;
-  text-transform: lowercase;
-}
-
-header.l-header {
-  @media screen and (min-width: 793px) {
-    height: 100px;
+.l-header ul.menu a {
+    padding-left: 0px;
   }
 
-  .logo {
-    display: block;
-    width: 129px;
-    margin: 0 auto;
-    padding-top: 10px;
-
-    @media screen and (min-width: 785px) {
+@media screen and (min-width: 785px) {
+  .l-header .logo {
     float: left;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
   }
 
-  nav,
-  .block-system-main-menu .block-content {
-    @media screen and (min-width: 785px) {
-      float: right;
-      margin: 0;
-    }
-
-    ul {
-      text-align: center;
-
-      @media screen and (min-width: 785px) {
-      float: left;
-      }
-    }
-
-    li {
-      display: inline-block;
-    }
-
-    i {
-      font-size: 1.1rem;
-    }
-
-    a {
-      display: block;
-      font-style: italic;
-      font-weight: 300;
-      font-size: 1.1rem;
-      letter-spacing: .05rem;
-      padding: 1.5rem;
-      margin-bottom: 0em;
-
-      @media screen and (min-width: 785px) {
-      padding: 3rem 1rem 3rem 1rem;
-      }
-    }
+  .l-header nav {
+    float: right;
+    margin: 0;
+    padding-top: 31px;
   }
+
+  .l-header nav a {
+    padding: 3rem 1rem 3rem 1rem;
+  }
+
+  .l-header .logo {
+    display: block;
+    max-width: 129px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+
 }
 
-footer.l-footer {
-  text-align: center;
-  min-height: 190px;
-
-  p.subtitle {
-    @media screen and (max-width: 500px) {
-  font-size: .75em;
-    }
-  }
-
-  .navigation {
-    margin-top: 25px;
-
-    a {
-      font-style: italic;
-      font-weight: 300;
-      font-size: .9rem;
-      letter-spacing: .05rem;
-      padding: 0 1rem;
-      margin-bottom: 0em;
-      text-decoration: underline;
-    }
-  }
-
-  .subtitle {
-    font-weight: 300;
-    margin-bottom: -1px;
-  }
-
-  #mce-EMAIL {
-    margin: .5rem 0;
-    padding: 8px;
-  }
-
-  #mc-embedded-subscribe {
-    margin-top: .35em;
-    cursor: pointer;
-  }
-}
 
 @media only screen and (max-width: 768px) {
   header.l-header {
@@ -533,6 +401,10 @@ footer.l-footer {
 
   .l-header .header-menu {
     float: none;
+  }
+
+  .l-header .block-system-user-menu {
+    padding-top: 20px;
   }
 
   .l-header .header-menu li {
@@ -556,14 +428,6 @@ footer.l-footer {
     top: 0px;
   }
 
-  .l-container {
-    margin-top: 40px;
-  }
-
-  .logged-in .l-top {
-    top: 30px;
-  }
-
   .responsive-menus.responsified .responsive-menus-simple li a {
     padding: 5px;
   }
@@ -583,12 +447,6 @@ footer.l-footer {
 .l-header nav ul li a:focus,
 .l-header nav ul li a.active {
   text-decoration: none;
-}
-
-@media screen and (min-width: 785px) {
-  .l-header nav ul li a {
-    padding: 5px;
-  }
 }
 
 @media only screen and (max-width: 330px) {

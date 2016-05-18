@@ -2,7 +2,7 @@ name = GDI_Tribute
 description = A theme for your small but growing organization that's tribute to Girl Develop It
 backdrop = 1.x
 type = theme
-version = 1.x-1.3
+version = 1.x-1.4
 
 stylesheets[all][] = css/style.css
 ; stylesheets[all][] = css/colors.css

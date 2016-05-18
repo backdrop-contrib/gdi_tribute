@@ -1,10 +1,5 @@
 /*
- * Colours
- *
  * Colours go in this file
- * these defaults come from the Bartik theme and are being transitioned from CSS into SASS variables
- * Big thanks to Jen Simmons for these defaults https://www.drupal.org/u/jensimmons
- *
  */
 @charset "UTF-8" ;
 
@@ -30,12 +25,12 @@ h3 a {
   color: $black;
 }
 
-.l-container {
+.l-wrapper {
   background-color: $white;
 }
 
 .l-content p,
-.l-container p {
+.l-wrapper p {
   color: $black;
 }
 
@@ -476,10 +471,14 @@ input.form-search {
   color: $black;
 }
 
+body .l-header ul.menu li a.active,
+.l-header ul.menu li.active-trail a {
+  background-color: transparent;
+}
+
 @media only screen and (max-width: 768px) {
   .block-system-main-menu .mobile-menu-accordion li.expanded li,
   .block-system-main-menu .mobile-menu-basic li.expanded li {
     background: $paleblue !important;
   }
 }
-

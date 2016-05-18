@@ -56,13 +56,6 @@ html {
  *
  * Collect all of your extendable classes, ids and silent extendables.
  */
-/*
- * Typography
- *
- * Text styles, not colours go in this file
- * these defaults come from the Bartik theme
- * Big thanks to Jen Simmons for these defaults https://www.drupal.org/u/jensimmons
- */
 html {
   font-size: 100%;
   /* 1 */
@@ -242,12 +235,8 @@ a.feed-icon {
  * Text styles, fonts, not colours go in this file
  */
 /**
- * Layout
- *
  * All layout theming should go in this file
  * general html page elements and non-forms/buttons/footer/header
- * these defaults come from the Bartik theme
- * Big thanks to Jen Simmons for these defaults https://www.drupal.org/u/jensimmons
  */
 /* ------------------ Table Styles ------------------ */
 .clearfix:after, .ig-row:after {
@@ -328,57 +317,18 @@ ul.tips {
   padding: 0 1.25em 0 0; }
 
 /* ------------------ Layout ------------------ */
-/* All layouts */
-.l-container, .l-top, .l-messages, .l-header-inner, .l-featured, .l-triptych, .l-footer-columns {
-  max-width: 965px;
-  width: 100%;
-  margin: 0 auto;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-
-.l-triptych-wrapper {
-  border-top: 1px solid #e7e7e7; }
-
-/* Push the footer down to the bottom of the page. */
-.layout {
-  box-sizing: border-box;
-  height: 100vh;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  clear: both; }
-
 body.admin-bar .layout {
   padding-top: 30px;
   margin-top: -30px; }
-
-.l-container, .l-triptych {
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto; }
-
-.l-header, .l-top, .l-messages, .l-footer-wrapper, .l-footer {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto; }
-
-/* ------------------- Main ------------------- */
-.l-container {
-  margin-top: 30px;
-  margin-bottom: 40px; }
 
 .l-messages {
   margin-top: 30px; }
 
 /* ----------------- Top ----------------- */
 .l-top {
-  margin-top: 20px;
   position: relative;
-  padding-left: 15px; }
+  margin-top: -20px;
+  clear: both; }
 
 /* ----------------- Content ------------------ */
 .content {
@@ -598,43 +548,6 @@ article .link-wrapper ul.links {
 .l-sidebar tbody {
   border: none; }
 
-/* ----------------- Triptych ----------------- */
-.l-triptych h2 {
-  font-size: 1.714em;
-  margin-bottom: 0.8em;
-  text-shadow: 0 1px 0 #ffffff;
-  text-align: center;
-  line-height: 1; }
-
-.l-triptych .block {
-  margin-bottom: 2em;
-  padding-bottom: 2em;
-  border-bottom: 1px solid #dfdfdf;
-  line-height: 1.3; }
-
-.l-triptych .block.last {
-  border-bottom: none; }
-
-.l-triptych .block ul li, .l-triptych .block ol li {
-  list-style: none; }
-
-.l-triptych .block ul, .l-triptych .block ol {
-  padding-left: 0; }
-
-.l-triptych .block-user-login .form-text {
-  width: 185px; }
-
-.l-triptych .block-node-syndicate h2 {
-  overflow: hidden;
-  width: 0;
-  height: 0; }
-
-.l-triptych-last .block-node-syndicate {
-  text-align: right; }
-
-.l-triptych .block-search-form .form-type-search input {
-  width: 185px; }
-
 .block-system-powered-by {
   text-align: center; }
 
@@ -806,19 +719,15 @@ div.admin-panel .description {
   border-top: 1px solid #d6d6d6;
   margin: 0; }
 
-.container {
-  width: 965px;
-  max-width: 100%;
-  margin: auto; }
-  @media screen and (max-width: 964px) {
-    .container {
-      padding: 0 25px; } }
-
 .main-container {
   padding-top: 50px; }
-  @media screen and (mmax-width: 500px) {
+  @media screen and (max-width: 500px) {
     .main-container {
       padding: 0px 25px; } }
+
+.l-footer {
+  padding: 0.5em 0 1em;
+  margin: 5em 0 0; }
 
 /**
  * Responsive tables.
@@ -830,8 +739,10 @@ div.admin-panel .description {
 @media screen and (max-width: 720px) {
   th.priority-low, td.priority-low {
     display: none; }
-  .l-container, .l-messages {
+  .l-messages {
     margin-top: 120px; }
+  .l-wrapper {
+    margin-top: 25px; }
   .l-sidebar .block {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -846,12 +757,8 @@ div.admin-panel .description {
  * blocks, sidebars, nodes, regions and non-forms/buttons/footer/header
  */
 /*
- * Components
- *
  * Include all your design elements in this file.
  * forms/buttons and non-general html elements
- * these defaults come from the Bartik theme and are being transitioned from CSS into SASS variables
- * Big thanks to Jen Simmons for these defaults https://www.drupal.org/u/jensimmons
  */
 /* Base responsive images */
 img {
@@ -1172,7 +1079,7 @@ li:hover {
   height: 45px; }
 
 a.danger, #edit-cancel {
-  height: 26px;
+  height: 45px;
   padding-top: .7rem; }
 
 #admin-bar-extra {
@@ -1234,11 +1141,7 @@ a.danger, #edit-cancel {
  * forms/buttons and specific page elements
  */
 /**
- * Navigation
- *
  * footer/header/main menu/navigation go in this file
- * these defaults come from the Bartik theme and are being transitioned from CSS into SASS variables
- * Big thanks to Jen Simmons for these defaults https://www.drupal.org/u/jensimmons
  */
 /* ------------------ Header ------------------ */
 #skip-link {
@@ -1261,12 +1164,11 @@ a.danger, #edit-cancel {
 #skip-link a:hover, #skip-link a:active, #skip-link a:focus {
   outline: 0; }
 
-header.l-header {
+.l-header {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-  width: 100%;
   z-index: 998;
   top: 0;
-  min-height: 50px; }
+  min-height: 100px; }
 
 html.admin-bar header.l-header {
   top: 32px; }
@@ -1275,23 +1177,6 @@ html.admin-bar header.l-header {
   letter-spacing: 1px;
   font-weight: 600;
   padding: 5px 15px; }
-
-.block-system-header {
-  float: left;
-  width: auto; }
-
-[dir="rtl"] .block-system-header .logo {
-  float: right;
-  padding: 15px 10px 0px 15px; }
-
-.block-system-header .name-and-slogan {
-  float: left;
-  /* LTR */
-  padding-top: 34px;
-  margin: 0 0 30px; }
-
-[dir="rtl"] .block-system-header .name-and-slogan {
-  float: right; }
 
 /* Region header blocks. */
 .l-header .block:after {
@@ -1321,21 +1206,6 @@ html.admin-bar header.l-header {
 [dir="rtl"] .l-header .form-text {
   margin-left: 2px;
   margin-right: 0; }
-
-/* Region header block menus. */
-.l-header .header-menu {
-  padding: 0;
-  margin: 10px 10px 0;
-  display: inline; }
-
-.l-header .header-menu li {
-  display: inline;
-  list-style-type: none;
-  padding: 0;
-  margin: 0; }
-
-.l-header .header-menu li.last a {
-  border-bottom: 0; }
 
 /* User Login block in the header region */
 .l-header .block-user-login {
@@ -1421,20 +1291,7 @@ html.admin-bar header.l-header {
   display: inline;
   padding: 0 0.5em; }
 
-/* --------------- Header Menu ------------ */
-.header-menu {
-  float: right;
-  /* LTR */
-  font-size: 0.929em;
-  margin: 10px 10px 0; }
-
-[dir="rtl"] .header-menu {
-  float: left; }
-
 /* --------------- Main Menu ------------ */
-body .l-header ul.menu li a.active, .l-header ul.menu li.active-trail a {
-  background-color: transparent; }
-
 .l-header ul.menu li {
   float: left;
   /* LTR */
@@ -1455,6 +1312,21 @@ body .l-header ul.menu li a.active, .l-header ul.menu li.active-trail a {
 
 [dir="rtl"] .l-header ul.menu a {
   float: right; }
+
+.block-system-main-menu ul.menu li ul {
+  border: 0px solid !important; }
+
+body:not(.front) .block-system-main-menu {
+  top: 0px !important; }
+
+.l-header-inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 965px;
+  margin: auto; }
+
+.l-header nav li {
+  display: inline-block; }
 
 /* ------------------ Footer ------------------ */
 .l-footer {
@@ -1541,81 +1413,23 @@ body .l-header ul.menu li a.active, .l-header ul.menu li.active-trail a {
   padding-right: 12px;
   border-left: none; }
 
-.block-system-main-menu ul.menu li ul {
-  border: 0px solid !important; }
+.l-header ul.menu a {
+  padding-left: 0px; }
 
-body:not(.front) .block-system-main-menu {
-  top: 0px !important; }
-
-header.l-header, .l-header ul.menu li a.active, .l-header ul.menu li.active-trail a, .header-menu a {
-  letter-spacing: 1px;
-  font-weight: 300;
-  text-transform: lowercase; }
-
-@media screen and (min-width: 793px) {
-  header.l-header {
-    height: 100px; } }
-header.l-header .logo {
-  display: block;
-  width: 129px;
-  margin: 0 auto;
-  padding-top: 10px; }
-  @media screen and (min-width: 785px) {
-    header.l-header .logo {
-      float: left; } }
-  header.l-header .logo img {
-    max-width: 100%;
-    height: auto; }
 @media screen and (min-width: 785px) {
-  header.l-header nav, header.l-header .block-system-main-menu .block-content {
+  .l-header .logo {
+    float: left; }
+  .l-header nav {
     float: right;
-    margin: 0; } }
-header.l-header nav ul, header.l-header .block-system-main-menu .block-content ul {
-  text-align: center; }
-  @media screen and (min-width: 785px) {
-    header.l-header nav ul, header.l-header .block-system-main-menu .block-content ul {
-      float: left; } }
-header.l-header nav li, header.l-header .block-system-main-menu .block-content li {
-  display: inline-block; }
-header.l-header nav i, header.l-header .block-system-main-menu .block-content i {
-  font-size: 1.1rem; }
-header.l-header nav a, header.l-header .block-system-main-menu .block-content a {
-  display: block;
-  font-style: italic;
-  font-weight: 300;
-  font-size: 1.1rem;
-  letter-spacing: .05rem;
-  padding: 1.5rem;
-  margin-bottom: 0em; }
-  @media screen and (min-width: 785px) {
-    header.l-header nav a, header.l-header .block-system-main-menu .block-content a {
-      padding: 3rem 1rem 3rem 1rem; } }
-
-footer.l-footer {
-  text-align: center;
-  min-height: 190px; }
-  @media screen and (max-width: 500px) {
-    footer.l-footer p.subtitle {
-      font-size: .75em; } }
-  footer.l-footer .navigation {
-    margin-top: 25px; }
-    footer.l-footer .navigation a {
-      font-style: italic;
-      font-weight: 300;
-      font-size: .9rem;
-      letter-spacing: .05rem;
-      padding: 0 1rem;
-      margin-bottom: 0em;
-      text-decoration: underline; }
-  footer.l-footer .subtitle {
-    font-weight: 300;
-    margin-bottom: -1px; }
-  footer.l-footer #mce-EMAIL {
-    margin: .5rem 0;
-    padding: 8px; }
-  footer.l-footer #mc-embedded-subscribe {
-    margin-top: .35em;
-    cursor: pointer; }
+    margin: 0;
+    padding-top: 31px; }
+  .l-header nav a {
+    padding: 3rem 1rem 3rem 1rem; }
+  .l-header .logo {
+    display: block;
+    max-width: 129px;
+    margin: 0 auto;
+    padding-top: 20px; } }
 
 @media only screen and (max-width: 768px) {
   header.l-header {
@@ -1627,6 +1441,8 @@ footer.l-footer {
     width: auto; }
   .l-header .header-menu {
     float: none; }
+  .l-header .block-system-user-menu {
+    padding-top: 20px; }
   .l-header .header-menu li {
     display: block;
     list-style-type: none;
@@ -1640,10 +1456,6 @@ footer.l-footer {
     float: none; }
   html.admin-bar .block-system-main-menu {
     top: 0px; }
-  .l-container {
-    margin-top: 40px; }
-  .logged-in .l-top {
-    top: 30px; }
   .responsive-menus.responsified .responsive-menus-simple li a {
     padding: 5px; }
   .responsive-menus.responsified .responsive-menus-simple li ul li a {
@@ -1655,10 +1467,6 @@ footer.l-footer {
 
 .l-header nav ul li a:hover, .l-header nav ul li a:focus, .l-header nav ul li a.active {
   text-decoration: none; }
-
-@media screen and (min-width: 785px) {
-  .l-header nav ul li a {
-    padding: 5px; } }
 
 @media only screen and (max-width: 330px) {
   .block-system-main-menu {
@@ -1672,12 +1480,7 @@ footer.l-footer {
  * footer/header/main menu/navigation go in this file
  */
 /*
- * Colours
- *
  * Colours go in this file
- * these defaults come from the Bartik theme and are being transitioned from CSS into SASS variables
- * Big thanks to Jen Simmons for these defaults https://www.drupal.org/u/jensimmons
- *
  */
 html ::selection, html ::-moz-selection {
   color: #d7d7d7;
@@ -1692,10 +1495,10 @@ a:hover, a:active {
 h2 a, h3 a {
   color: #282828; }
 
-.l-container {
+.l-wrapper {
   background-color: #ffffff; }
 
-.l-content p, .l-container p {
+.l-content p, .l-wrapper p {
   color: #282828; }
 
 .l-header ul.menu li a.active, .l-header ul.menu li.active-trail a {
@@ -1967,6 +1770,9 @@ div.admin-panel {
 
 input.form-search {
   color: #282828; }
+
+body .l-header ul.menu li a.active, .l-header ul.menu li.active-trail a {
+  background-color: transparent; }
 
 @media only screen and (max-width: 768px) {
   .block-system-main-menu .mobile-menu-accordion li.expanded li, .block-system-main-menu .mobile-menu-basic li.expanded li {
