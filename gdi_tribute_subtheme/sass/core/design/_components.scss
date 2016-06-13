@@ -2,7 +2,7 @@
  * Include all your design elements in this file.
  * forms/buttons and non-general html elements
  */
-@charset "UTF-8" ;
+@charset "utf-8";
 
 /* Base responsive images */
 img {
@@ -33,6 +33,21 @@ ul li {
   clear: both;
   display: block;
   margin-top: 12px;
+}
+
+@media only screen and (max-width: 420px) {
+  .l-content h2::after {
+    content: " ";
+    border: 0 none;
+    border-bottom: 2px solid #e49f13;
+    border-top: 2px solid #e49f13;
+    height: 2px;
+    margin: 0 auto 2rem;
+    width: 200px;
+    clear: both;
+    display: block;
+    margin-top: 12px;
+  }
 }
 
 /* ---------------- Buttons    ---------------- */
@@ -503,9 +518,9 @@ a.danger,
   }
 
   @media screen and (max-width: 500px) {
-  width: 100%;
-  padding: 20px 20%;
-  float: none;
+    width: 100%;
+    padding: 20px 20%;
+    float: none;
 
     &:first-of-type {
       padding-top: 40px;

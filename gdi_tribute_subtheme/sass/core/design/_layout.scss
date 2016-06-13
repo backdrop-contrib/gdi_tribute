@@ -2,7 +2,7 @@
  * All layout theming should go in this file
  * general html page elements and non-forms/buttons/footer/header
  */
-@charset "UTF-8" ;
+@charset "utf-8";
 
 /* ------------------ Table Styles ------------------ */
 .clearfix {
@@ -117,7 +117,6 @@ ul.tips {
 }
 
 /* ------------------ Layout ------------------ */
-
 body.admin-bar .layout {
   padding-top: 30px;
   margin-top: -30px;
@@ -168,6 +167,7 @@ body.admin-bar .layout {
   font-size: 0.8em;
   margin-bottom: 12px;
   padding: 0px;
+  clear: both;
 }
 
 .submitted .user-picture img {
@@ -639,7 +639,7 @@ div.admin-panel .description {
   padding-top: 50px;
 
   @media screen and (max-width: 500px) {
-  padding: 0px 25px;
+    padding: 0px 25px;
   }
 }
 
@@ -683,5 +683,35 @@ div.admin-panel .description {
   .layout--two-column .l-content,
   .layout--two-column .l-sidebar {
     padding: 0 5px;
+  }
+}
+
+@media screen and (max-width: 37.5625em) {
+  .admin-bar .layout--juiced-up-full-screen-bottom.layout {
+    margin-top: 30px !important;
+  }
+}
+
+@media (min-width: 75em) {
+  .container.container-800 {
+    max-width: 50rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .container.container-960 {
+    max-width: 60rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .container.container-1200 {
+    max-width: 75rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .container.container-1440 {
+    max-width: 90rem;
   }
 }

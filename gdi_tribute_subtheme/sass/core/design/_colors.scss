@@ -1,7 +1,7 @@
 /*
  * Colours go in this file
  */
-@charset "UTF-8" ;
+@charset "utf-8";
 
 html {
   ::selection,
@@ -40,9 +40,9 @@ h3 a {
 }
 
 .l-sidebar .block {
-  border-top: 1px solid #DDDDDD;
+  border-top: 1px solid #dddddd;
   border-top: 1px solid rgba(0, 0, 0, .08);
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #dddddd;
   border-bottom: 1px solid rgba(0, 0, 0, .08);
 }
 
@@ -76,8 +76,8 @@ header.l-header a {
 
   &:hover {
     @media screen and (min-width: 500px) {
-  background-color: $black;
-  color: $blush;
+      background-color: $black;
+      color: $blush;
 
       /*box-shadow: .025rem .025rem .5rem $black; */
     }
@@ -476,9 +476,34 @@ body .l-header ul.menu li a.active,
   background-color: transparent;
 }
 
+.l-wrapper.juiced-main,
+.l-content.juiced-main {
+  background-color: transparent;
+  z-index: 1;
+}
+
 @media only screen and (max-width: 768px) {
   .block-system-main-menu .mobile-menu-accordion li.expanded li,
   .block-system-main-menu .mobile-menu-basic li.expanded li {
     background: $paleblue !important;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .l-header .block-system-main-menu ul.menu li {
+    background: transparent;
+  }
+
+  .l-header .block-system-main-menu ul.menu li:hover,
+  .l-header .block-system-main-menu ul.menu li ul li {
+    background: rgba(255, 255, 255, .5);
+  }
+
+  .l-header .block-system-main-menu ul.menu li li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    padding-right: 1em;
+    padding-left: 1em;
   }
 }

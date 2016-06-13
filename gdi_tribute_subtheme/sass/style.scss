@@ -7,7 +7,7 @@
  * Comment the lines of the features you don't need on this website
  */
 
-@import "../node_modules/susy/sass/susy";
+/* @import "../node_modules/susy/sass/susy";
 @import "bourbon";
 @import "neat";
 
@@ -36,7 +36,7 @@ $susy: (
     clearfix: false,
     rem: true,
   )
-);
+); */
 
 /* ---------- Import parent theme base ---------- */
 @import 'core/helpers/variables';
